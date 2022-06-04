@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login',App\Http\Livewire\Auth\Login::class)->name('login');
+
+Route::group(["middleware"=>"auth"],function(){
+    Route::get('/users',App\Http\Livewire\User\Index::class)->name('users.index');
+    // Route::get('/user/create',App\Http\Livewire\User\Create::class)->name('users.create');
+    // Route::get('/user/update/{id}',App\Http\Livewire\User\Update::class)->name('users.update');
+    // Route::get('/user/{id}',App\Http\Livewire\User\Show::class)->name('users.show');
 });
