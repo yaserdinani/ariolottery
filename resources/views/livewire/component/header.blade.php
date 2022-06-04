@@ -11,7 +11,7 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">خروج</button>
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" wire:click='logout'>خروج</button>
       </form>
     </div>
 </nav>
