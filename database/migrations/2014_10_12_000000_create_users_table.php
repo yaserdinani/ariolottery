@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('user_name');
             $table->string('password')->nullable();
             $table->boolean('is_admin')->default(false);
+            $table->integer('level')->default(0);
             $table->timestamps();
         });
     }

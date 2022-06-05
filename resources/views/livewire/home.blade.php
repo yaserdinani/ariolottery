@@ -3,7 +3,7 @@
 body {
     font-family: "Peyda";
 }
-@media screen and (min-width:577px){
+@media screen and (min-width:769px){
     body {
         background-size: cover;
         background-repeat: no-repeat;
@@ -105,9 +105,91 @@ body {
         cursor: pointer;
     }
 }
-@media screen and (max-width:576px){
+@media screen and (max-width:768px){
     .desktopContainer{
         display: none;
+    }
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('images/mobileBackground.png');
+        background-position: top;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .mobileCupImage{
+        text-align:center;
+        margin-top:80%;
+    }
+    .mobileH1Container{
+        color: #fff;
+        text-align:center;
+    }
+    .mobileScoreShowContainer{
+        display:flex;
+        flex-direction: row;
+        gap: 1%;
+        align-items: center;
+        margin-top:5%;
+        color: #fff;
+        justify-content: center;
+    }
+    .mobileLine{
+        height: 1px;
+        width: 20%;
+        border-top: 2px dashed #FF9E0C;
+        margin-top:-0.5%;
+    }
+    .dot{
+        width:10px;
+        height: 10px;
+        background-color: #FF9E0C;
+        border-radius: 50%;
+        margin-top:-0.5%;
+        margin-right: -1.1%;
+    }
+    .mobileLogoContainer{
+        display: flex;
+        gap:2%;
+        flex-direction: row;
+        align-items: center;
+        justify-content:center;
+    }
+    .winnerContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #fff;
+        justify-content: center;
+        margin-right: 15%;
+    }
+    .winnerRowsContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: flex-start;
+        margin-top: 1%;
+        width:100%;
+    }
+    .winnerRow{
+        border: 1px solid #FF9E0C;
+        border-radius: 12px;
+        padding-top:2%;
+        padding-bottom: 2%;
+        padding-left:5%;
+        padding-right: 5%;
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+    .mobileMedalImage{
+        margin-right: -30%;
+    }
+    .mobileMedalImage img{
+        width: 90%;
     }
 }
 </style>
@@ -125,7 +207,7 @@ body {
             <h5>تعداد شانس ها</h5>
             <div class="desktopLine"></div>
             <span class="dot"></span>
-            <h5>۲۰۰ نفر</h5>
+            <h5>۲۰۰ شانس</h5>
         </div>
         @if(auth()->user()->is_admin)
             <div class="desktopStartBtn">
@@ -141,15 +223,15 @@ body {
             <div class="winnerRowsContainer">
                 <div class="winnerRow">
                     <span>۱۰ شانس</span>
-                    <span>@yaserdinani</span>
+                    <span dir="ltr">@yaserdinani</span>
                 </div>
                 <div class="winnerRow">
                     <span>۱۰ شانس</span>
-                    <span>@yaserdinani</span>
+                    <span dir="ltr">@yaserdinani</span>
                 </div>
                 <div class="winnerRow">
                     <span>۱۰ شانس</span>
-                    <span>@yaserdinani</span>
+                    <span dir="ltr">@yaserdinani</span>
                 </div>
             </div>
             <div class="desktopMedalImage">
@@ -157,5 +239,42 @@ body {
             </div>
         </div>
     </div>
-    <div class="mobileContainer"></div>
+    <div class="mobileContainer">
+        <div class="mobileCupImage">
+            <img src="{{asset('images/winnercup.png')}}" style="width:60%;">
+        </div>
+        <div class="mobileH1Container">
+            <h2>با آریو ایده باش و <span style="color:#FF9E0C;">جایزه</span> بگیر</h2>
+            <h5>قرعه کشی کمپین آریو ایده در تاریخ ۲۱ خرداد ماه</h5>
+        </div>
+        <div class="mobileScoreShowContainer">
+            <h5>تعداد شانس ها</h5>
+            <div class="mobileLine"></div>
+            <span class="dot"></span>
+            <h5>۲۰۰ شانس</h5>
+        </div>
+        <div class="mobileLogoContainer">
+            <h4 style="color:#FF9E0C;">برنده‌های <br>قرعه‌کشی</h4>
+            <img src="{{asset('images/whiteLogo.png')}}">
+        </div>
+        <div class="winnerContainer">
+            <div class="winnerRowsContainer">
+                <div class="winnerRow">
+                    <span>۱۰ شانس</span>
+                    <span dir="ltr">@yaserdinani</span>
+                </div>
+                <div class="winnerRow">
+                    <span>۱۰ شانس</span>
+                    <span dir="ltr">@yaserdinani</span>
+                </div>
+                <div class="winnerRow">
+                    <span>۱۰ شانس</span>
+                    <span dir="ltr">@yaserdinani</span>
+                </div>
+            </div>
+            <div class="mobileMedalImage">
+                <img src="{{asset('images/firstmedal.png')}}">
+            </div>
+        </div>
+    </div>
 </div>
