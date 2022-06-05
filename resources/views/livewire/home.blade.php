@@ -209,16 +209,24 @@ body {
             <span class="dot"></span>
             <h5>{{$scores}} شانس</h5>
         </div>
-        @if(auth()->user()->is_admin)
-            <div class="desktopStartBtn" wire:click='choose()'>
-                شروع
-            </div>
-        @else
+        @auth
+            @if(auth()->user()->is_admin)
+                <div class="desktopStartBtn" wire:click='choose()'>
+                    شروع
+                </div>
+            @else
+                <div class="desktopLogoContainer">
+                    <h4 style="color:#FF9E0C;font-size:2vw;">برنده‌های <br>قرعه‌کشی</h4>
+                    <img src="{{asset('images/blacklogo.png')}}">
+                </div>
+            @endif
+        @endauth
+        @guest
             <div class="desktopLogoContainer">
                 <h4 style="color:#FF9E0C;font-size:2vw;">برنده‌های <br>قرعه‌کشی</h4>
                 <img src="{{asset('images/blacklogo.png')}}">
             </div>
-        @endif
+        @endguest
         <div class="winnerContainer">
             <div class="winnerRowsContainer">
                 <div class="winnerRow">
