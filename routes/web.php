@@ -17,4 +17,5 @@ Route::get('/login',App\Http\Livewire\Auth\Login::class)->name('login');
 
 Route::group(["middleware"=>"auth"],function(){
     Route::get('/users',App\Http\Livewire\User\Index::class)->name('users.index');
+    Route::get('/settings',App\Http\Livewire\Setting\Index::class)->name('setting.index');
 });
