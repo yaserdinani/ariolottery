@@ -207,10 +207,10 @@ body {
             <h5>تعداد شانس ها</h5>
             <div class="desktopLine"></div>
             <span class="dot"></span>
-            <h5>۲۰۰ شانس</h5>
+            <h5>{{$scores}} شانس</h5>
         </div>
         @if(auth()->user()->is_admin)
-            <div class="desktopStartBtn">
+            <div class="desktopStartBtn" wire:click='choose()'>
                 شروع
             </div>
         @else
@@ -222,16 +222,31 @@ body {
         <div class="winnerContainer">
             <div class="winnerRowsContainer">
                 <div class="winnerRow">
-                    <span>۱۰ شانس</span>
-                    <span dir="ltr">@yaserdinani</span>
+                    @if($first_user_name==null)
+                        <span>۰ شانس</span>
+                        <span dir="ltr">نامشخص</span>
+                    @else
+                        <span>{{$first_user_score}} شانس</span>
+                        <span dir="ltr">@ {{$first_user_name}}</span>
+                    @endif
                 </div>
                 <div class="winnerRow">
-                    <span>۱۰ شانس</span>
-                    <span dir="ltr">@yaserdinani</span>
+                    @if($second_user_name==null)
+                        <span>۰ شانس</span>
+                        <span dir="ltr">نامشخص</span>
+                    @else
+                        <span>{{$second_user_score}} شانس</span>
+                        <span dir="ltr">@ {{$second_user_name}}</span>
+                    @endif
                 </div>
                 <div class="winnerRow">
-                    <span>۱۰ شانس</span>
-                    <span dir="ltr">@yaserdinani</span>
+                    @if($third_user_name==null)
+                        <span>۰ شانس</span>
+                        <span dir="ltr">نامشخص</span>
+                    @else
+                        <span>{{$third_user_score}} شانس</span>
+                        <span dir="ltr">@ {{$third_user_name}}</span>
+                    @endif
                 </div>
             </div>
             <div class="desktopMedalImage">
@@ -251,7 +266,7 @@ body {
             <h5>تعداد شانس ها</h5>
             <div class="mobileLine"></div>
             <span class="dot"></span>
-            <h5>۲۰۰ شانس</h5>
+            <h5>{{$scores}} شانس</h5>
         </div>
         <div class="mobileLogoContainer">
             <h4 style="color:#FF9E0C;">برنده‌های <br>قرعه‌کشی</h4>
@@ -260,16 +275,31 @@ body {
         <div class="winnerContainer">
             <div class="winnerRowsContainer">
                 <div class="winnerRow">
-                    <span>۱۰ شانس</span>
-                    <span dir="ltr">@yaserdinani</span>
+                    @if($first_user_name==null)
+                        <span>۰ شانس</span>
+                        <span dir="ltr">نامشخص</span>
+                    @else
+                        <span>{{$first_user_score}} شانس</span>
+                        <span dir="ltr">@ {{$first_user_name}}</span>
+                    @endif
                 </div>
                 <div class="winnerRow">
-                    <span>۱۰ شانس</span>
-                    <span dir="ltr">@yaserdinani</span>
+                    @if($second_user_name==null)
+                        <span>۰ شانس</span>
+                        <span dir="ltr">نامشخص</span>
+                    @else
+                        <span>{{$second_user_score}} شانس</span>
+                        <span dir="ltr">@ {{$second_user_name}}</span>
+                    @endif
                 </div>
                 <div class="winnerRow">
-                    <span>۱۰ شانس</span>
-                    <span dir="ltr">@yaserdinani</span>
+                    @if($third_user_name==null)
+                        <span>۰ شانس</span>
+                        <span dir="ltr">نامشخص</span>
+                    @else
+                        <span>{{$third_user_score}} شانس</span>
+                        <span dir="ltr">@ {{$third_user_name}}</span>
+                    @endif
                 </div>
             </div>
             <div class="mobileMedalImage">
