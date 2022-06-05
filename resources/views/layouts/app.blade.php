@@ -9,6 +9,14 @@
     @livewireStyles
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>سامانه قرعه کشی آریو ایده</title>
+    @yield('styles')
+    <style>
+        body{
+            margin: 0;
+            background-color: #fff; 
+            font-family: "Peyda";
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid" dir="rtl">

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login',App\Http\Livewire\Auth\Login::class)->name('login');
-
+Route::get('/',App\Http\Livewire\Home::class)->name('home');
 Route::group(["middleware"=>"auth"],function(){
     Route::get('/users',App\Http\Livewire\User\Index::class)->name('users.index');
     Route::get('/settings',App\Http\Livewire\Setting\Index::class)->name('setting.index');
